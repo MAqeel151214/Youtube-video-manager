@@ -1,0 +1,18 @@
+[
+  {
+    "Name": "python",
+    "Time": "1 hour"
+  },
+  {
+    "Name": "c++",
+    "Time": "6 hours"
+  },
+  {
+    "Name": "java",
+    "Time": "6"
+  },
+  {
+    "Name": "ffg",
+    "Time": "4"
+  }
+]
