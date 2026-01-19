@@ -33,19 +33,19 @@ Fully cross-platform (Linux, Windows, macOS)
 ⌨️ Input Display Example
 
 📂 Project Structure
-youtube-video-manager/
+Youtube-video-manager/
 │
 ├── app.py               # Main application code
-├── youtube.txt           # Database file (created automatically)
-├── README.md             # Documentation
+├── youtube.txt          # Database file (created automatically)
+├── Readme.md            # Documentation
 └── preview.png          # Screenshot
     
    
 
 🛠️ Installation
 1️⃣ Clone the repository
-git clone https://github.com/yourusername/youtube-video-manager.git
-cd youtube-video-manager
+git clone https://github.com/MAqeel151214/Youtube-video-manager.git
+cd Youtube-video-manager
 
 2️⃣ Install dependencies
 
@@ -54,7 +54,11 @@ The project uses only Python’s standard library, but installing from requireme
 pip install -r requirements.txt
 
 ▶️ Run the Application
-python main.py
+python app.py
+
+Optional: use a custom data file
+- CLI flag: python app.py --file my_videos.json
+- Env var: YVM_FILE=/path/to/my_videos.json python app.py
 
 📦 Data Storage
 

@@ -1,9 +1,30 @@
 import json
 import os
 import sys
+import argparse
 
 # Configuration
-VIDEO_FILE = "youtube.txt"
+def get_default_data_file():
+    """Return the default path to the data file (next to this script)."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(script_dir, "youtube.txt")
+
+# Allow override via environment variable; can be further overridden by CLI
+VIDEO_FILE = os.environ.get("YVM_FILE", get_default_data_file())
+
+
+def parse_args():
+    """Parse command-line arguments for optional data file override."""
+    parser = argparse.ArgumentParser(
+        description="YouTube Video Manager - simple CLI to track videos"
+    )
+    parser.add_argument(
+        "-f",
+        "--file",
+        dest="file",
+        help="Path to the JSON data file (default: next to app.py)",
+    )
+    return parser.parse_args()
 
 
 # --- Data Handling Helper Functions ---
@@ -153,8 +174,15 @@ def display_menu():
 # --- Main Application Logic ---
 
 def main():
+    # Parse optional CLI flag to override data file path
+    args = parse_args()
+    global VIDEO_FILE
+    if args.file:
+        VIDEO_FILE = args.file
+
     videos = load_data()
     print("\n🎬 Welcome to YouTube Video Manager!\n")
+    print(f"📂 Using data file: {VIDEO_FILE}\n")
 
     while True:
         display_menu()

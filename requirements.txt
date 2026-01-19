@@ -1,0 +1,2 @@
+# This project uses only Python's standard library.
+# Keeping an empty requirements file helps consistent tooling.
